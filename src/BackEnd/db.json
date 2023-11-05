@@ -1,0 +1,41 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "LORD",
+      "surname": "Dracula",
+      "adresse": "tunis",
+      "age": 9999
+    },
+    {
+      "name": "hamza",
+      "surname": "khalloufi",
+      "adress": "beja",
+      "age": "11",
+      "id": 2
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "code": 127,
+      "libelle": "PC",
+      "prixunitaire": 2000,
+      "tauxTva": 10
+    },
+    {
+      "id": 2,
+      "code": 128,
+      "libelle": "TV",
+      "prixunitaire": 1000,
+      "tauxTva": 20
+    },
+    {
+      "id": 3,
+      "code": 128,
+      "libelle": "Table",
+      "prixunitaire": 200,
+      "tauxTva": 30
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+<p>main-user works!</p>
+<form #form="ngForm">
+  <div class="mb-3">
+   <label class="form-label">First Name</label>
+    <input class="form-control"  type="text" name="First_Name" [(ngModel)]="user.firstName" required pattern="[a-zA-Z]*" #First_Name="ngModel">
+
+  <span *ngIf="First_Name.invalid && First_Name.touched">
+    <span *ngIf="First_Name.errors?.['required']">
+     required !!!
+    </span>
+    <span *ngIf="First_Name.errors?.['pattern']">
+      Pattern !!!
+    </span>
+  </span>
+  </div>
+  <div class="mb-3">
+
+  <label class="form-label">Last Name</label>
+  <input class="form-control"  type="text" name="Last_Name" [(ngModel)]="user.lastName" required pattern="[a-zA-Z]*" #Last_Name="ngModel">
+  <span *ngIf="Last_Name.invalid && Last_Name.touched">
+    <span *ngIf="Last_Name.errors?.['required']">
+     required !!!
+    </span>
+    <span *ngIf="Last_Name.errors?.['pattern']">
+      Pattern problem !!!
+    </span>
+   </span>
+  </div>
+  <div class="mb-3">
+
+  <label class="form-label">BirthDate</label>
+  <input  class="form-control"  type="date" name="BirthDate" [(ngModel)]="user.birthDate">
+  </div>
+  <div class="mb-3">
+  <label class="form-label">Email</label>
+  <input class="form-control"  type="email" name="Email" [(ngModel)]="user.email" pattern="^[a-zA-Z0-9._-]+@gmail.com"  #email="ngModel">
+    <span *ngIf="email.invalid && email.touched">
+    <span *ngIf="email.errors?.['pattern']">
+      Pattern email problem !!!
+    </span>
+   </span>
+  </div>
+  <div class="mb-3">
+  <label class="form-label">Password</label>
+  <input class="form-control"  type="password" name="Password" [(ngModel)]="user.password" pattern="^[a-zA-Z0-9]{8,}?"  #password="ngModel">
+  <span *ngIf="password.invalid && password.touched">
+    <span *ngIf="password.errors?.['pattern']">
+      Pattern password !!!
+    </span>
+   </span>
+  </div>
+  <label class="form-label">Profession</label>
+  <input class="form-control"  type="text" name="Profession" [(ngModel)]="user.profession">
+  <div class="mb-3">
+
+  <label class="form-label">Select an item:</label>
+  <select class="form-control" [(ngModel)]="user.accountCategory">
+    <option [defaultSelected]=true id="customer" value="item1">Customer</option>
+    <option value="item2">SS</option>
+    <option value="item3">SS</option>
+  </select>
+  </div>
+  <button type="button"  class="btn btn-warning" [disabled]="!form.valid" (click)="saveUser(form.value)">Submit</button>
+
+</form>

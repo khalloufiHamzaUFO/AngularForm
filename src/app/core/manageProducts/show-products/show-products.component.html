@@ -1,0 +1,13 @@
+<div class="container">
+  <h1>Product List</h1>
+  <ul class="list-group">
+    <li *ngFor="let product of products" class="list-group-item">
+      <h5 class="mb-1">{{ product.libelle }}</h5>
+      <p class="mb-1">Product Code: {{ product.code }}</p>
+      <p class="mb-1">Prix: {{ product.prixunitaire }}</p>
+      <p class="mb-1">TVA: {{ product.tauxTva }}</p>
+      <button class="btn-outline-light" (click)="showDetails(product.id)">See Details</button>
+      <button class="btn-outline-light" (click)="removeProduct(product.id)">Remove</button>
+    </li>
+  </ul>
+</div>

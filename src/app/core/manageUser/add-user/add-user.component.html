@@ -1,0 +1,26 @@
+
+<form #form="ngForm">
+  <label>name</label>
+  <input type="text" name="name" [(ngModel)]="user.name" required minlength="3" #nameuser="ngModel">
+  <span *ngIf="nameuser.invalid && nameuser.touched">
+<span *ngIf="nameuser.errors?.['required']">
+    required
+</span>
+<span *ngIf="nameuser.errors?.['minlength']">
+    minlength
+</span>
+    </span>
+  <label>surname</label>
+  <input type="text" name="surname" [(ngModel)]="user.surame">
+  <label>adresse</label>
+  <input type="text" name="adress" [(ngModel)]="user.adresse">
+  <label>age</label>
+  <input type="text" name="age" [(ngModel)]="user.age" pattern="[0-9]*" #age="ngModel">
+  <span *ngIf="age.invalid ">
+        <span *ngIf="age.errors?.['pattern']">
+            pattern
+        </span>
+
+        </span>
+  <input type="submit" value="add user" (click)="saveUser(form.value)" >
+</form>
